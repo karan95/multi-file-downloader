@@ -1,0 +1,87 @@
+/* demo component */
+.file-downloader-demo {
+    padding: 10%;
+}
+
+.file-downloader-demo h3 {
+    color: teal;
+    padding: 0% 25%;
+}
+
+/* file downloader component schema */
+/* fd header */
+.fd-table {
+    color: #545454;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.12);
+}
+
+.fd-header th {
+    border-top: 0px;
+    border-bottom: 0px;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.fd-table-header th {
+    font-weight: 400;
+}
+
+.fd-btn-selectAll {
+    width: 20px;
+}
+
+.fd-btn-selectAll:focus {
+   outline: none;
+}
+
+.fd-square-select {
+    color: #0062cc;
+    font-size: 21px;
+    padding: 0;
+    border: none;
+    background: none;
+    width: 21px;
+}
+
+.fd-btn-download {
+    border: none;
+    color: #545454;
+    font-weight: 300;
+    background: transparent;
+}
+
+.fd-btn-download:focus {
+    outline: none;
+}
+
+
+/* fd table content */
+.fd-table input[type=checkbox] { 
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.fd-table-content tr:hover {
+    color: #212529;
+    background-color: rgba(0,0,0,.075);
+}
+
+.fd-content-icon-circle {
+    margin-right: -20px;
+    color: #32CD32;
+}
+
+.fd-status-content {
+    padding-left: 22px;
+}
+    
+.fd-row-selected {
+    color: #212529;
+    background-color: rgba(0,0,0,.085);
+}

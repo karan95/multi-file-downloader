@@ -1,0 +1,69 @@
+{{#if fileStatList}}
+  <table class="table fd-table">
+  
+    <thead>
+      <tr class="fd-header">
+        <th>
+          <div class="fd-btn-selectAll">
+            {{#if (and (gt selectedFilesCount 0) (lt selectedFilesCount availableFileIds.length))}}
+              <button class="far fa-square fd-square-select" onclick={{action "toggleAllFileRows"}}></button>
+            {{else}}
+              <input type="checkbox"
+                checked={{eq selectedFilesCount availableFileIds.length}}
+                disabled={{eq availableFileIds.length 0}}
+                onclick={{action "toggleAllFileRows"}}
+              >
+            {{/if}}
+          </div>
+        </th>
+        <th>
+          Selected {{#if (gt selectedFilesCount 0)}}{{selectedFilesCount}}{{/if}}
+        </th>
+        <th>
+          <button class="fd-btn-download" onclick={{action "downloadSelectedFiles"}}>
+            <i class="fas fa-download"></i> Download Selected
+          </button>
+        </th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr class="fd-table-header">
+        <th scope="col"></th>
+        <th>Name</th>
+        <th>Device</th>
+        <th>Path</th>
+        <th class="text-center">Status</th>
+      </tr>
+    </thead>
+
+    <tbody class="fd-table-content">
+      {{#each fileStatList as |file index|}}
+        <tr class={{if (contains selectedFileList index) "fd-row-selected"}}>
+          <th>
+            {{file-downloader/row-select
+              index=index
+              checked=(contains selectedFileList index)
+              disabled=(not-eq file.status "available")
+              toggleSelectedFileRow=(action "toggleSelectedFileRow")
+            }}
+          </th>
+          <td>{{file.name}}</td>
+          <td>{{file.device}}</td>
+          <td>{{file.path}}</td>
+          <td>
+            <span>
+              {{#if (eq file.status "available")}}
+                <i class="fa fa-circle fd-content-icon-circle"></i>
+              {{/if}}
+            </span>
+            <span class="fd-status-content">{{file.status}}</span>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+
+  </table>
+{{/if}}

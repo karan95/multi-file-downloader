@@ -1,0 +1,9 @@
+import Component from '@ember/component';
+
+export default Component.extend({
+    classNames: ['row-select'],
+    index: null,
+    checked: null,
+    disabled: null,
+    toggleSelectedFileRow: () => {}
+});
