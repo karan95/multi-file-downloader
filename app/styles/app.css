@@ -31,6 +31,10 @@
     width: 20px;
 }
 
+.fd-btn-all-checkbox {
+    margin-left: 4px;
+}
+
 .fd-btn-selectAll:focus {
    outline: none;
 }
@@ -84,4 +88,13 @@
 .fd-row-selected {
     color: #212529;
     background-color: rgba(0,0,0,.085);
+}
+
+/* media queries to make it responsive */
+@media screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	
+	.fd-table { 
+        overflow-x: auto;
+    }
 }
